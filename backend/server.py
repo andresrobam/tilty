@@ -1,22 +1,24 @@
 from requests import post
 from flask import Flask, request
 from decimal import Decimal
-import warnings
 from os import getenv
 from numpy.polynomial.polynomial import polyval as value
 
 from common import Calibration, getTemperatureCorrectedGravity
 
+import warnings
+import simplejson as json
+
 app = Flask(__name__)
 
 def sendMeasurement(temperature, gravity):
     global brewfatherUrl
-    response = post(brewfatherUrl, json = { "name": "tilty", "temp": temperature, "gravity": gravity })
+    response = post(brewfatherUrl, json = json.dumps({ "name": "tilty", "temp": temperature, "gravity": gravity }))
     print("Brewfather responded with {}: {}".format(response.status_code, response.text))
 
 
 warnings.filterwarnings("ignore")
-delaySeconds = getenv("DELAY")
+delaySeconds = getenv("DELAY", 10800)
 brewfatherUrl = getenv("URL")
 
 calibration = Calibration()
