@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 def sendMeasurement(temperature, gravity):
     global brewfatherUrl
-    response = post(brewfatherUrl, json = json.dumps({ "name": "tilty", "temp": temperature, "gravity": gravity }))
+    response = post(brewfatherUrl, json = { "name": "tilty", "temp": temperature, "gravity": gravity })
     print("Brewfather responded with {}: {}".format(response.status_code, response.text))
 
 
