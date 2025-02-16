@@ -1,4 +1,5 @@
-FROM python:3.13.2
+FROM python:3.13.2-alpine
+RUN apk add g++ 
 
 WORKDIR /app
 
