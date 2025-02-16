@@ -1,0 +1,20 @@
+{
+  "hydrometerCalibrationTemperature": 20,
+  "calibrationLiquidTemperature": 22.55,
+  "temperaturePoints": [
+    20.0, 20.0,
+    25.0, 25.0
+  ],
+  "gravityPoints": [
+    -61.5, 1.0,
+    -57.2, 1.006,
+    -51.3, 1.016,
+    -49.2, 1.02,
+    -44.8, 1.024,
+    -41.8, 1.028,
+    -39.22, 1.032,
+    -32.3, 1.042,
+    -29.5, 1.045,
+    -25.5, 1.051
+  ]
+}
