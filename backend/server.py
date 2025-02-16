@@ -18,7 +18,7 @@ def sendMeasurement(temperature, gravity):
 
 
 warnings.filterwarnings("ignore")
-delaySeconds = getenv("DELAY", 10800)
+delaySeconds = getenv("DELAY", "10800")
 brewfatherUrl = getenv("URL")
 
 calibration = Calibration()
